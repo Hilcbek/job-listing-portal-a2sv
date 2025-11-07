@@ -13,8 +13,8 @@ This is a simple **Todo List** web application built using **HTML**, **CSS**, an
 ---
 
 ## 🧰 Technologies Used
-- HTML
-- CSS
+- HTML  
+- CSS  
 - JavaScript (Vanilla JS)
 
 ---

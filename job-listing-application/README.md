@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Job Listing Application
+Overview
 
-## Getting Started
+This is a Job Listing Application built with Next.js (App Router), TypeScript, and Shadcn UI components. It provides a fully server-rendered experience for browsing and searching job postings. The project focuses on clean architecture, type safety, and modern React patterns.
 
-First, run the development server:
+Features Implemented
+1. Job Listings
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+Fetches all job postings from a dummy JSON file using a server function (getJobs).
+
+Displays job title, description, company, responsibilities, and other details.
+
+Fully typed using TypeScript for safety and autocompletion.
+
+2. Single Job Page
+
+Server component fetches a single job by ID using getSingleJob.
+
+Handles the case when a job is not found with proper error messages.
+
+Displays detailed information including responsibilities, company info, and required skills.
+
+3. Search Functionality
+
+Users can search jobs by title, description, company, or required skills.
+
+The search is handled server-side using query parameters.
+
+Updates URL with ?search=... to allow bookmarking and sharing search results.
+
+Search input built with Shadcn UI Input and Button, keeping the page mostly server-rendered.
+
+4. Shadcn UI Components
+
+Fully utilizes Shadcn UI components such as:
+
+Input
+
+Button
+
+Dropdown Menu
+
+Styling is consistent, responsive, and fully typed with TypeScript.
+
+5. Axios & Type Safety
+
+All server functions use axios to fetch data.
+
+Proper error handling using axios.isAxiosError.
+
+All responses are typed with TypeScript interfaces for predictable data structure.
+
+Technology Stack
+
+Next.js (App Router)
+
+TypeScript
+
+React
+
+Shadcn UI
+
+Axios
+
+Server Components for data fetching
+
+CSS Modules for styling (optional)
+
+Project Structure
+
+app/jobs/page.tsx — Jobs listing page with search.
+
+app/jobs/[id]/page.tsx — Single job detail page.
+
+actions/jobs.ts — Server functions (getJobs, getSingleJob).
+
+utils/dummy.json — Mock job postings data.
+
+components/JobSearch.tsx — Search input component using Shadcn UI.
+
+Future Improvements
+
+Pagination for job listings.
+
+Sorting/filtering by categories, location, or skills.
+
+Connect to a real backend API instead of dummy JSON.
+
+Debounced search for better performance.
+
+Authentication for posting jobs.
+
+How to Run
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+or 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Live demo -> https://a2sv-jobs.vercel.app/
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git link -> https://github.com/Hilcbek/job-listing-portal-a2sv/tree/main/job-listing-application

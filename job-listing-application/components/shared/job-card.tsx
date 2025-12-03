@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function JobCard({ job }: { job: JobPosting }) {
   return (
     <Link href={`/jobs/${job.id}`}>
-      <Card className="p-6 rounded-3xl hover:shadow-md transition cursor-pointer">
+      <Card className="p-6 rounded-3xl bg-card/10 hover:shadow-md transition cursor-pointer">
         <CardContent className="p-0">
           <div className="flex gap-4 items-start">
             <Avatar className="w-14 h-14">

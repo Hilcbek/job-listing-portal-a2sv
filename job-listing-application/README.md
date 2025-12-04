@@ -178,7 +178,7 @@ The app is deployed on Vercel with automatic deployments on every push to main:
 ## Screenshots & Pages
 
 ### 1. Signup Page
-![Signup Page](/public/assets/image.1/signup.png)
+![Signup Page](/public/assets/signup.png)
 
 **Description:**
 The signup page features a clean, user-friendly form where new users can create their account. The form includes:
@@ -196,7 +196,7 @@ The design follows the Figma reference provided, with proper spacing and a moder
 ---
 
 ### 2. Email Verification Page
-![Email Verification](/public/assets/image.1/verify.png)
+![Email Verification](/public/assets/verify.png)
 
 **Description:**
 After signing up, users land on this verification page where they need to enter the OTP (One-Time Password) sent to their email. Features include:
@@ -212,7 +212,7 @@ This page uses the `/verify-email` endpoint with the user's email and OTP code t
 ---
 
 ### 3. Signin Page
-![Signin Page](/public/assets/image.1/signin.png)
+![Signin Page](/public/assets/signin.png)
 
 **Description:**
 The signin page allows registered users to access their accounts. It includes:
@@ -229,7 +229,7 @@ When users submit their credentials, the form sends a POST request to the `/logi
 ---
 
 ### 4. Jobs Listing Page
-![Jobs Page](/public/assets/image.1/jobs.png)
+![Jobs Page](/public/assets/jobs.png)
 
 **Description:**
 This is the main page where users can browse all available job opportunities. Features include:
@@ -246,7 +246,7 @@ Users can click on any job card to view the full details on the single job page.
 ---
 
 ### 5. Job Detail Page
-![Job Detail](/public/assets/image.1/job-detail.png)
+![Job Detail](/public/assets/job-detail.png)
 
 **Description:**
 The job detail page provides comprehensive information about a selected job opportunity. The layout features:

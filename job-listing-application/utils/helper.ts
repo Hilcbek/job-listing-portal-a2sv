@@ -54,3 +54,28 @@ export const getCategoryStyle = (category: string) => {
       };
   }
 };
+
+
+export const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&()[\]{}^~#<>.,:;_\-+=|])[A-Za-z\d@$!%*?&()[\]{}^~#<>.,:;_\-+=|]{6,}$/;
+
+  export const credentialsMessages = {
+    name: {
+      required: 'Name is required',
+      min: 'Name must be at least 2 characters',
+      max: 'Name cannot exceed 30 characters',
+    },
+    email: {
+      required: 'Email is required',
+      invalid: 'Email is not valid',
+    },
+    password: {
+      required: 'Password is required',
+      invalid:
+        'Password must be at least 6 characters and include uppercase, lowercase, number, and special character',
+    },
+    confirmPassword: {
+      required: 'Please confirm your password',
+      mismatch: 'Passwords do not match',
+    },
+  };

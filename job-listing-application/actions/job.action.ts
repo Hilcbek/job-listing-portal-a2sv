@@ -1,36 +1,21 @@
 'use server';
 
 import { axiosInstance } from '@/config/axios';
-import { JobPosting, JobPostingsResponse } from '@/types/job.type';
+import { jobReponseType, searchJobParams, singleJobReponse } from '@/types/job.type';
 import axios from 'axios';
 
-interface SearchProps {
-  search?: string;
-}
-export async function getJobs({
-  search,
-}: SearchProps): Promise<JobPostingsResponse> {
+export async function getJobs(
+  params: searchJobParams
+): Promise<jobReponseType> {
   try {
-    const { data } = await axiosInstance.get<JobPostingsResponse>(
-      '/dummy.json'
+    const data = await axiosInstance.get<jobReponseType>(
+      `/opportunities/search?query=${params.q}`,
+      {
+        params,
+      }
     );
 
-    let filteredJobs: JobPosting[] = data.job_postings;
-
-    if (search) {
-      const query = search.toLowerCase();
-      filteredJobs = filteredJobs.filter((job) => {
-        return (
-          job.title.toLowerCase().includes(query) ||
-          job.company.toLowerCase().includes(query) ||
-          job.about.required_skills.some((skill) =>
-            skill.toLowerCase().includes(query)
-          )
-        );
-      });
-    }
-
-    return { job_postings: filteredJobs };
+    return data.data;
   } catch (err: unknown) {
     if (axios.isAxiosError(err)) {
       throw new Error(
@@ -41,19 +26,18 @@ export async function getJobs({
   }
 }
 
-export async function getSingleJob(id: string): Promise<JobPosting> {
+export async function getSingleJob(id: string): Promise<singleJobReponse> {
   try {
-    const { data } = await axiosInstance.get<JobPostingsResponse>(
-      '/dummy.json'
+    const data = await axiosInstance.get<singleJobReponse>(
+      `/opportunities/${id}`
     );
 
-    const job = data.job_postings.find((job) => job.id === id);
-
-    if (!job) {
+    if (!data.data) {
       throw new Error(`Job with ID ${id} not found`);
     }
 
-    return job;
+
+    return data.data;
   } catch (err: unknown) {
     if (axios.isAxiosError(err)) {
       throw new Error(

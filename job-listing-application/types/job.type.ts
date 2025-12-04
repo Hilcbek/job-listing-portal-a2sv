@@ -1,30 +1,64 @@
-export interface JobPosting {
+export interface Opportunity {
   id: string;
   title: string;
   description: string;
-  responsibilities: string[];
-  ideal_candidate: {
-    age: string;
-    gender: string;
-    traits: string[];
+  responsibilities: string;
+  requirements: string;
+  idealCandidate: string;
+  categories: string[];
+  opType: string;
+  startDate: string;
+  endDate: string;
+  deadline: string;
+  location: string[];
+  requiredSkills: string[];
+  whenAndWhere: string;
+  createdBy: string;
+  orgID: string;
+  datePosted: string;
+  status: string;
+  applicantsCount: number;
+  viewsCount: number;
+  orgName: string;
+  logoUrl: string;
+  isBookmarked: boolean;
+  isRolling: boolean;
+  questions: string | null;
+  perksAndBenefits: string | null;
+  createdAt: string;
+  updatedAt: string;
+  orgPrimaryPhone: string;
+  orgEmail: string;
+  isPaid: boolean;
+  average_rating: number;
+  total_reviews: number;
+  engagementType: string;
+  paymentOption: {
+    currency: string;
+    paymentType: string;
   };
-  when_where: string;
-  about: {
-    posted_on: string;
-    deadline: string;
-    location: string;
-    start_date: string;
-    end_date: string;
-    categories: string[];
-    required_skills: string[];
-  };
-  company: string;
-  image: string;
 }
 
-export interface JobPostingsResponse {
-  job_postings: JobPosting[];
+export interface jobReponseType {
+  data: Opportunity[];
+  count: number;
+  success: boolean;
+  message: string;
+  errors: object | null;
 }
-export interface SinglePostingReponse {
-  jobReponse: JobPosting;
+export interface singleJobReponse {
+  data: Opportunity;
+  count: number;
+  success: boolean;
+  message: string;
+  errors: object | null;
+}
+
+export interface searchJobParams {
+  q?: string;
+  category?: string;
+  location?: string;
+  isPaid?: boolean;
+  page?: number;
+  pageSize?: number;
 }

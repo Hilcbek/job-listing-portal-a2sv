@@ -4,6 +4,7 @@ Overview
 This is a Job Listing Application built with Next.js (App Router), TypeScript, and Shadcn UI components. It provides a fully server-rendered experience for browsing and searching job postings. The project focuses on clean architecture, type safety, and modern React patterns.
 
 Features Implemented
+
 1. Job Listings
 
 Fetches all job postings from a dummy JSON file using a server function (getJobs).
@@ -91,18 +92,19 @@ Debounced search for better performance.
 Authentication for posting jobs.
 
 How to Run
+
 # Install dependencies
+
 pnpm install
 
 # Run development server
+
 pnpm dev
 
 # Open http://localhost:3000
 
-or 
-
+or
 
 Live demo -> https://a2sv-jobs.vercel.app/
-
 
 git link -> https://github.com/Hilcbek/job-listing-portal-a2sv/tree/main/job-listing-application

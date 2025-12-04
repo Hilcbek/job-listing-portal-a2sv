@@ -23,7 +23,6 @@ Here's what I used to build this thing:
 ## Features
 
 ### Authentication 🔐
-
 - User signup with email verification (OTP-based)
 - Secure login/logout
 - Protected routes
@@ -31,7 +30,6 @@ Here's what I used to build this thing:
 - Role-based access control
 
 ### Job Listings 📋
-
 - Browse all available jobs
 - Detailed job view with all the info you need
 - Filter and search functionality
@@ -39,7 +37,6 @@ Here's what I used to build this thing:
 - Company information and ratings
 
 ### User Experience ✨
-
 - Responsive design (works great on mobile too)
 - Clean, modern UI
 - Loading states and error handling
@@ -88,7 +85,6 @@ Here's how everything is organized:
 ### Prerequisites
 
 Make sure you have these installed:
-
 - Node.js (v18 or higher)
 - npm or yarn or pnpm (I use pnpm)
 - A database (PostgreSQL recommended)
@@ -96,14 +92,12 @@ Make sure you have these installed:
 ### Installation
 
 1. Clone the repo:
-
 ```bash
 git clone <your-repo-url>
 cd job-listing-platform
 ```
 
 2. Install dependencies:
-
 ```bash
 npm install
 # or
@@ -111,7 +105,7 @@ pnpm install
 ```
 
 3. Set up your environment variables:
-   Create a `.env.local` file in the root directory:
+Create a `.env.local` file in the root directory:
 
 ```env
 # Database
@@ -126,13 +120,11 @@ NEXT_PUBLIC_API_URL="https://akil-backend.onrender.com"
 ```
 
 4. Run database migrations:
-
 ```bash
 npx prisma migrate dev
 ```
 
 5. Start the development server:
-
 ```bash
 npm run dev
 ```
@@ -161,19 +153,15 @@ All these endpoints are provided by the A2SV backend:
 ## Key Implementation Details
 
 ### Server Actions
-
 I'm using Next.js Server Actions for data fetching and mutations. They're in the `actions/` folder and make the code much cleaner than traditional API routes.
 
 ### Form Validation
-
 All forms use React Hook Form + Zod for validation. This means we catch errors before hitting the server, which makes things faster and gives better user feedback.
 
 ### Type Safety
-
 Everything is typed with TypeScript. The types are defined in the `types/` folder and used throughout the app.
 
 ### Security
-
 - Passwords are never stored in the frontend
 - Access tokens are handled by NextAuth
 - All sensitive data is validated
@@ -190,12 +178,10 @@ The app is deployed on Vercel with automatic deployments on every push to main:
 ## Screenshots & Pages
 
 ### 1. Signup Page
-
-![Signup Page](./assets/signup.png)
+![Signup Page](/public/assets/image.1/signup.png)
 
 **Description:**
 The signup page features a clean, user-friendly form where new users can create their account. The form includes:
-
 - Name input field
 - Email address field
 - Password field with strength indicator
@@ -210,12 +196,10 @@ The design follows the Figma reference provided, with proper spacing and a moder
 ---
 
 ### 2. Email Verification Page
-
-![Email Verification](./assets/verify.png)
+![Email Verification](/public/assets/image.1/verify.png)
 
 **Description:**
 After signing up, users land on this verification page where they need to enter the OTP (One-Time Password) sent to their email. Features include:
-
 - OTP input field (6-digit code)
 - Clear instructions telling users to check their email
 - Resend OTP button (in case they didn't receive it)
@@ -228,12 +212,10 @@ This page uses the `/verify-email` endpoint with the user's email and OTP code t
 ---
 
 ### 3. Signin Page
-
-![Signin Page](./assets/signin.png)
+![Signin Page](/public/assets/image.1/signin.png)
 
 **Description:**
 The signin page allows registered users to access their accounts. It includes:
-
 - Email input field
 - Password input field
 - "Remember me" checkbox option
@@ -247,12 +229,10 @@ When users submit their credentials, the form sends a POST request to the `/logi
 ---
 
 ### 4. Jobs Listing Page
-
-![Jobs Page](./assets/jobs.png)
+![Jobs Page](/public/assets/image.1/jobs.png)
 
 **Description:**
 This is the main page where users can browse all available job opportunities. Features include:
-
 - Grid layout of job cards showing key information
 - Each card displays: job title, company name, location, and brief description
 - Filter options by category, location, and engagement type
@@ -266,14 +246,12 @@ Users can click on any job card to view the full details on the single job page.
 ---
 
 ### 5. Job Detail Page
-
-![Job Detail](./assets/job-detail.png)
+![Job Detail](/public/assets/image.1/job-detail.png)
 
 **Description:**
 The job detail page provides comprehensive information about a selected job opportunity. The layout features:
 
 **Left Column (Main Content):**
-
 - Back button to return to jobs listing
 - Full job title
 - Company information with logo
@@ -286,7 +264,6 @@ The job detail page provides comprehensive information about a selected job oppo
 - When and where (work arrangement details)
 
 **Right Sidebar (Quick Info):**
-
 - Posted date
 - Application deadline
 - Location
@@ -319,7 +296,6 @@ The page fetches data from `/opportunities/:id` endpoint and displays everything
 ## Future Improvements
 
 If I had more time, I'd add:
-
 - Job application functionality
 - User profile management
 - Bookmark/save jobs feature

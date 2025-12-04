@@ -11,10 +11,16 @@ import { Button } from '@/components/ui/button';
 import { ChevronsUpDownIcon } from 'lucide-react';
 import { clsx } from 'clsx';
 import { Opportunity } from '@/types/job.type';
+import { Metadata } from 'next';
 
 interface JobsPageProps {
   searchParams?: Promise<{ search?: string }>;
 }
+
+export const metadata: Metadata = {
+  title: 'Jobs',
+  description: 'Jobs list',
+};
 
 export default async function JobsPage({ searchParams }: JobsPageProps) {
   // Await the promise

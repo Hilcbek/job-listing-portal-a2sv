@@ -5,12 +5,24 @@ import { singleJobReponse } from '@/types/job.type';
 import { Separator } from '@radix-ui/react-separator';
 import { IconArrowBack } from '@tabler/icons-react';
 import { CalendarDays, Clock, MapPin, Users } from 'lucide-react';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 interface Props {
   params: Promise<{ id: string }>;
 }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const response: singleJobReponse = await getSingleJob(id);
+  const data = response.data;
+
+  return {
+    title: `${data.title} | My App`,
+    description: data.description,
+  };
+}
+
 
 export default async function JobSinglePage({ params }: Props) {
   const { id } = await params;

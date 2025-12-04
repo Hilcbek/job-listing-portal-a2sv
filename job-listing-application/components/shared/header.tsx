@@ -68,7 +68,7 @@ export default function HeaderComponent() {
                     <IconUser />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent align="end" className="bg-background">
                   <DropdownMenuItem disabled>
                     Hello, {session.user?.name?.split(' ')[0]}
                   </DropdownMenuItem>

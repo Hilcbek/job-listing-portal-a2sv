@@ -9,7 +9,7 @@ export async function getJobs(
 ): Promise<jobReponseType> {
   try {
     const data = await axiosInstance.get<jobReponseType>(
-      `/opportunities/search?query=${params.q}`,
+      `/opportunities/search?keyword=${params.q}`,
       {
         params,
       }
